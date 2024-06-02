@@ -3,10 +3,10 @@ use crate::vec3::{self, Point3, Vec3};
  
 #[derive(Clone, Default)]
 pub struct HitRecord {
-    pub p: Point3,
-    pub normal: Vec3,
-    pub t: f64,
-    pub front_face: bool,
+    pub p: Point3, // Point of intersection
+    pub normal: Vec3, // Normal at the point of intersection
+    pub t: f64,// Distance from the ray origin to the intersection point
+    pub front_face: bool, // True if the normal is facing the ray
 }
  
 impl HitRecord {
@@ -24,5 +24,5 @@ impl HitRecord {
 }
  
 pub trait Hittable {
-    fn hit(&self, ray: &Ray, t_min: f64, t_max: f64, rec: &mut HitRecord) -> bool;
+    fn hit(&self, ray: &Ray, t_min: f64, t_max: f64, rec: &mut HitRecord) -> bool; // Return true if the ray hits the object
 }
