@@ -1,3 +1,5 @@
+use std::rc::Rc;
+use crate::material::Material;
 use crate::ray::Ray;
 use crate::vec3::{self, Point3, Vec3};
  
@@ -7,6 +9,7 @@ pub struct HitRecord {
     pub normal: Vec3, // Normal at the point of intersection
     pub t: f64,// Distance from the ray origin to the intersection point
     pub front_face: bool, // True if the normal is facing the ray
+    pub mat: Option<Rc<dyn Material>>,
 }
  
 impl HitRecord {
