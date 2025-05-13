@@ -200,16 +200,3 @@ pub fn random_range(min: f64, max: f64) -> Vec3 {
         common::random_double_range(min, max),
     )
 }
-
-#[test]
-fn test_vec3() {
-    let mut x = Vec3::new(1.0, 2.0, 3.0);
-    println!("-x: {:>40?}", -x);
-    println!("x+x:{:>10}", x + x);
-    println!("x-x:{:>10}", x - x);
-    x += x;
-    println!("x+=x:{:>10}", x);
-    println!("{:>10}", x);
-    println!("{:>10}", 2222);
-    println!("{:>10}", 13322233);
-}
